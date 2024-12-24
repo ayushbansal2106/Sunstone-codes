@@ -8,6 +8,7 @@
 
 void printmenu();
 void checkparlindrome();
+void checkarmstrong();
 void calculatevolume();
 void volmenu();
 float cubevol();
@@ -33,6 +34,10 @@ int main()
             break;
 
         case 3:
+            checkarmstrong();
+            break;
+
+        case 4:
             printf("Exitting the program\n");
             break;
 
@@ -40,7 +45,7 @@ int main()
             printf("Invalid input entered, please TRy AGAIN\n");
             break;
         }
-    } while (choice != 3);
+    } while (choice != 4);
 
     return 0;
 }
@@ -168,5 +173,39 @@ void printmenu()
     printf("Select the task you want to perform\n");
     printf("1. Parlindrome number checker\n");
     printf("2. Calculate the volume of different shapes\n");
-    printf("3. Exit the program\n");
+    printf("3. Armstrong number checker\n");
+    printf("4. Exit the program\n");
+}
+
+void checkarmstrong()
+{
+    int num, original_num, n = 0, result = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    original_num = num;
+
+    while (original_num != 0)
+    {
+        original_num /= 10;
+        n++;
+    }
+
+    original_num = num;
+
+    while (original_num > 0)
+    {
+        result = result + (pow(original_num % 10, n));
+        original_num /= 10;
+    }
+
+    if (result == num)
+    {
+        printf("%d is an Armstrong number.\n", num);
+    }
+    else
+    {
+        printf("%d is not an Armstrong number.\n", num);
+    }
 }
