@@ -1,13 +1,15 @@
 /* Write a menudriven program
-    i) parlindrome checker
-    ii) a program to calculate volume of different shapes
+    i)   Palindrome number checker
+    ii)  A program to calculate volume of different shapes
+    iii) Armstrong number checker
+
 */
 
 #include <stdio.h>
 #include <math.h>
 
 void printmenu();
-void checkparlindrome();
+void checkpalindrome();
 void checkarmstrong();
 void calculatevolume();
 void volmenu();
@@ -15,6 +17,8 @@ float cubevol();
 int cuboidvol();
 void cylindervol();
 void conevol();
+void spherevol();
+void sqpyramidvol();
 
 int main()
 {
@@ -26,7 +30,7 @@ int main()
         switch (choice)
         {
         case 1:
-            checkparlindrome();
+            checkpalindrome();
             break;
 
         case 2:
@@ -76,6 +80,14 @@ void calculatevolume()
             break;
 
         case 5:
+            spherevol();
+            break;
+
+        case 6:
+            sqpyramidvol();
+            break;
+
+        case 7:
             printf("Exitting the program\n");
             break;
 
@@ -83,7 +95,7 @@ void calculatevolume()
             printf("Invalid input, Please TRY AGAIN\n");
             break;
         }
-    } while (choice != 5);
+    } while (choice != 7);
 }
 
 float cubevol()
@@ -133,17 +145,42 @@ void conevol()
     printf("Volume of cone: %.2lf\n\n\n", volume);
 }
 
+void spherevol()
+{
+    float rad;
+    printf("Enter the radius of the sphere: ");
+    scanf("%f", &rad);
+    float volume = (4.0/3.0)*3.14*pow(rad,3);
+    printf("Volume of sphere: %.2lf\n\n\n", volume);
+}
+
+void sqpyramidvol()
+{
+    float length, breadth, height;
+    printf("Enter the lenght of the square pyramid: ");
+    scanf("%f", &length);
+    printf("Enter the breadth of the square pyramid: ");
+    scanf("%f", &breadth);
+    printf("Enter the height of the square pyramid: ");
+    scanf("%f", &height);
+
+    float volume = (1.0/3.0)*length*breadth*height;
+    printf("Volume of square pyramid: %.2lf\n\n\n", volume);
+}
+
 void volmenu()
 {
     printf("Select the shape you want to calculate the area for\n");
-    printf("1. Cube\n");     // a*a*a
-    printf("2. Cuboid\n");   // l*b*h
-    printf("3. Cylinder\n"); // 3.14*r*r*h
-    printf("4. Cone\n");     //(1/3)*3.14*r*r*h
-    printf("5. Exit\n");
+    printf("1. Cube\n");                            // a*a*a
+    printf("2. Cuboid\n");                          // l*b*h
+    printf("3. Cylinder\n");                        // 3.14*r*r*h
+    printf("4. Right Corcular Cone\n");             // (1/3)*3.14*r*r*h
+    printf("5. Sphere\n");                          // (4/3)*3.14*r*r*r
+    printf("6. Square or Rectangular Pyramid\n");   // (1/3)*l*b*h
+    printf("7. Exit\n");
 }
 
-void checkparlindrome()
+void checkpalindrome()
 {
     int n, reversed = 0, original, digit;
 
@@ -171,7 +208,7 @@ void checkparlindrome()
 void printmenu()
 {
     printf("Select the task you want to perform\n");
-    printf("1. Parlindrome number checker\n");
+    printf("1. Palindrome number checker\n");
     printf("2. Calculate the volume of different shapes\n");
     printf("3. Armstrong number checker\n");
     printf("4. Exit the program\n");
