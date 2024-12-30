@@ -1,37 +1,17 @@
 #include <stdio.h>
-#include <math.h>
+
+struct Person
+{
+    char name[50];
+    int age;
+};
 
 int main()
 {
-    int num, original_num, n = 0, result = 0;
+    struct Person p = {"John", 25};
+    struct Person *ptr = &p;
 
-    printf("Enter a number: ");
-    scanf("%d", &num);
-
-    original_num = num;
-
-    while (original_num != 0)
-    {
-        original_num /= 10;
-        n++;
-    }
-
-    original_num = num;
-
-    while (original_num > 0)
-    {
-        result = result + (pow(original_num % 10,n));
-        original_num /= 10;
-    }
-
-    if (result == num)
-    {
-        printf("%d is an Armstrong number.\n", num);
-    }
-    else
-    {
-        printf("%d is not an Armstrong number.\n", num);
-    }
-
+    printf("Name: %s\n", ptr->name);
+    printf("Age: %d\n", ptr->age);
     return 0;
 }
