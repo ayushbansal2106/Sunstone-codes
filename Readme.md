@@ -1,4 +1,4 @@
-# 🎓 Sunstone Programming Collection
+# 🎓 C Programming Collection
 
 ## 📚 Overview
 This repository contains a comprehensive collection of C programming examples and implementations created during coursework at Sunstone. The codebase is organized into distinct folders for different learning purposes and practical applications.
