@@ -2,7 +2,7 @@
 int main()
 {
     int a = 0, b = 1, result;
-    for (int i = 1; i <= 9; i++)
+    for (int i = 1; i <= 10; i++)
     {
         printf("%d value: %d\n",i,a);
         result = a + b;
