@@ -9,6 +9,16 @@ This repository contains a comprehensive collection of C programming examples an
 📦 Sunstone-codes
  ┣ 📂 .vscode
  ┣ 📂 Codes
+   ┣ 📂 Array
+   ┣ 📂 Array Assignment
+   ┣ 📂 C Programs Assignments
+   ┣ 📂 Functions
+   ┣ 📂 Functions Assignment
+   ┣ 📂 Hacker rank
+   ┣ 📂 Operators
+   ┣ 📂 output
+   ┣ 📂 Pointers
+   ┗ 📂 Structures
  ┣ 📂 Demo
  ┣ 📂 Lab Practical
  ┣ 📂 Practice
