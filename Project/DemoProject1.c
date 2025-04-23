@@ -44,7 +44,7 @@ int main()
         case 4:
             DeleteStudent();
             break;
-        
+
         case 5:
             printf("Exitting");
             break;
@@ -67,18 +67,19 @@ void AddStudent()
     }
 
     int valid = 0;
-    while(!valid){
-    printf("Enter Roll Number:\n");
-    if(scanf("%d", &students[count].roll)!=1)
+    while (!valid)
     {
-        printf("Invalid input, enter a numeric roll number\n");
-        while (getchar() != '\n');
+        printf("Enter Roll Number:\n");
+        if (scanf("%d", &students[count].roll) != 1)
+        {
+            printf("Invalid input, enter a numeric roll number\n");
+            while (getchar() != '\n');
+        }
+        else
+        {
+            valid = 1;
+        }
     }
-    else
-    {
-        valid = 1;
-    }
-}
     printf("Enter Full Name:\n");
     scanf(" %[^\n]", &students[count].name);
     printf("Enter marks:\n");
@@ -118,9 +119,9 @@ void SearchStudent()
         }
     }
     if (!found)
-        {
-            printf("Student record not found");
-        }
+    {
+        printf("Student record not found");
+    }
 }
 
 void DeleteStudent()
